@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karta rozmowy o relacji</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .card {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      display: none;
+    }
+    .card.active {
+      display: block;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .description {
+      font-size: 15px;
+      color: #aaa;
+    }
+    button {
+      background-color: #333;
+      color: #e0e0e0;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧡 Karta rozmowy o relacji</h1>
+  <button onclick="showRandomCard()">Losuj pytanie</button>
+
+  <div class="card">
+    <div class="question">Co daje mi poczucie bycia kochaną/kochanym?</div>
+    <div class="description">(Jak rozumiem okazywanie uczuć, co mnie uspokaja, zbliża? Przykłady: wspólne rozmowy, przytulanie, słowa, gesty, obecność…)</div>
+  </div>
+  <div class="card">
+    <div class="question">Co sprawia, że czuję się oddalona/oddalony?</div>
+    <div class="description">(Co mnie odsuwa, wywołuje smutek, dystans? Przykłady: brak odpowiedzi, ironia, ciągłe żarty, znikanie bez słowa…)</div>
+  </div>
+  <div class="card">
+    <div class="question">Czego potrzebuję w związku, żeby czuć się bezpiecznie i spokojnie?</div>
+    <div class="description">(Zasady, rytuały, konkretne rzeczy, które pomagają mi w codzienności.)</div>
+  </div>
+  <div class="card">
+    <div class="question">Czego nie chcę w związku?</div>
+    <div class="description">(Co mnie przytłacza, zniechęca, czego nie jestem w stanie przyjąć?)</div>
+  </div>
+  <div class="card">
+    <div class="question">Jakie mam trudności, o których warto wiedzieć?</div>
+    <div class="description">(Np. problemy z wyrażaniem emocji, lęki, sposoby reagowania w stresie.)</div>
+  </div>
+  <div class="card">
+    <div class="question">Jak mogę dawać Ci więcej bliskości?</div>
+    <div class="description">(Jak mogę się starać bardziej z uwzględnieniem Twoich potrzeb?)</div>
+  </div>
+  <div class="card">
+    <div class="question">Czego oczekuję w codziennym kontakcie?</div>
+    <div class="description">(Ile kontaktu, jaka forma, jak często, co mnie cieszy?)</div>
+  </div>
+  <div class="card">
+    <div class="question">Jakie są moje granice?</div>
+    <div class="description">(Co jest dla mnie za dużo, co mnie przytłacza, czego nie chcę przekraczać.)</div>
+  </div>
+  <div class="card">
+    <div class="question">Co chcę zbudować razem z Tobą?</div>
+    <div class="description">(Wspólna wizja — nie musi być bardzo poważna. Chodzi o kierunek, marzenia, wyobrażenia.)</div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    function showRandomCard() {
+      cards.forEach(card => card.classList.remove('active'));
+      const index = Math.floor(Math.random() * cards.length);
+      cards[index].classList.add('active');
+    }
+  </script>
+</body>
+</html>
